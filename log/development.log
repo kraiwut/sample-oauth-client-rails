@@ -1,0 +1,2498 @@
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+  [1m[36m (0.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (3.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20111128155025)
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "doorkeeper_uid" integer, "doorkeeper_access_token" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111128155025')[0m
+Migrating to ChangeThatAccessTokenBro (20111129145352)
+  [1m[35m (1.2ms)[0m  CREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "doorkeeper_uid" integer, "doorkeeper_access_token" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "users"
+  [1m[36m (0.6ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "doorkeeper_uid" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "altered_users"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "altered_users"[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "doorkeeper_access_token" varchar(255)
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111129145352')[0m
+Migrating to AddEmailToUser (20111129160159)
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "email" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111129160159')[0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 14:09:10 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (32.8ms)
+Compiled application.css  (0ms)  (pid 85005)
+Compiled application.js  (2ms)  (pid 85005)
+Compiled jquery.js  (3ms)  (pid 85005)
+Compiled jquery_ujs.js  (1ms)  (pid 85005)
+Completed 200 OK in 152ms (Views: 151.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:09:11 +0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:09:11 +0700
+Served asset /jquery.js - 200 OK (9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:09:11 +0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:09:11 +0700
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:09:17 +0700
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 14:13:07 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 56ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:13:07 +0700
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:13:07 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:13:07 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:13:07 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:13:09 +0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 14:13:27 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:13:27 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:13:27 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:13:27 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:13:27 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 14:17:08 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:17:08 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:17:08 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:17:08 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:17:08 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:17:10 +0700
+
+
+Started GET "/users/omniauth_callbacks?code=d5efab1587844039bcc63e8c0ed6c284f0d48a0ba9ad8ea58861a02063ef21c5" for 127.0.0.1 at 2015-08-04 14:17:20 +0700
+
+ActionController::RoutingError (No route matches [GET] "/users/omniauth_callbacks"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 14:18:07 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:18:07 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:18:07 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:18:07 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:18:07 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:21:12 +0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 14:21:38 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (30.3ms)
+Completed 200 OK in 78ms (Views: 77.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:21:38 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:21:38 +0700
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:21:38 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:21:38 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:21:40 +0700
+
+
+Started GET "/users/auth/test/callbacks?code=4dd46a5781f86f806c538af0e71558434f44bb626aaabdb2eab646a4d45957d1" for 127.0.0.1 at 2015-08-04 14:22:35 +0700
+
+ActionController::RoutingError (No route matches [GET] "/users/auth/test/callbacks"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/users/auth/test/callback?code=509623a532f3dcadec95b0e64a293ca7013ed2a1573a549cfdf6122eb0ea27bd" for 127.0.0.1 at 2015-08-04 14:23:23 +0700
+
+ActionController::RoutingError (No route matches [GET] "/users/auth/test/callback"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.7ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/users/auth/doorkeeper/callback?code=21afcc1ab57006e349969e267d1d51c3e4b8bbd48542749f0b3b3b41449a6735" for 127.0.0.1 at 2015-08-04 14:24:26 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"21afcc1ab57006e349969e267d1d51c3e4b8bbd48542749f0b3b3b41449a6735"}
+Completed 500 Internal Server Error in 12ms
+
+NoMethodError (undefined method `new_session_path' for #<Users::OmniauthCallbacksController:0x007fb9cb9a1eb0>):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.1ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/users/auth/doorkeeper/callback?code=fc3112324152ef7e75579be34472356be7a71a5a50de88dd61ea8eaf314107fa" for 127.0.0.1 at 2015-08-04 14:28:09 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"fc3112324152ef7e75579be34472356be7a71a5a50de88dd61ea8eaf314107fa"}
+Completed 500 Internal Server Error in 21ms
+
+NoMethodError (undefined method `new_session_path' for #<Users::OmniauthCallbacksController:0x007f8fc26ca8f0>):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (43.0ms)
+
+
+Started GET "/users/auth/doorkeeper/callback?code=afbcd94b92df498143c208c03ecbf1037b6964a60139ee7e0f8ab1fb8823490d" for 127.0.0.1 at 2015-08-04 14:32:34 +0700
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"afbcd94b92df498143c208c03ecbf1037b6964a60139ee7e0f8ab1fb8823490d"}
+Completed 500 Internal Server Error in 38ms
+
+NoMethodError (undefined method `new_session_path' for #<Users::OmniauthCallbacksController:0x007f8fc26a96f0>):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.0ms)
+
+
+Started GET "/users/auth/doorkeeper/callback?code=afbcd94b92df498143c208c03ecbf1037b6964a60139ee7e0f8ab1fb8823490d" for 127.0.0.1 at 2015-08-04 14:32:43 +0700
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"afbcd94b92df498143c208c03ecbf1037b6964a60139ee7e0f8ab1fb8823490d"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.7ms)
+
+
+Started GET "/users/auth/doorkeeper/callback?code=0d410ac08a9cec6fe0a30a69795f049b24ed6c845ec76735385c69c63de7e7f9" for 127.0.0.1 at 2015-08-04 14:32:47 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"0d410ac08a9cec6fe0a30a69795f049b24ed6c845ec76735385c69c63de7e7f9"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:33:15 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=58150d642f7e14f1a0c92e7ecac5795e6ddfb71f077d204a2d89167341d0c4e7&state=0531c1a9a6532eb81dab380b3e42b2a64966e4766517b0d9" for 127.0.0.1 at 2015-08-04 14:33:23 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"58150d642f7e14f1a0c92e7ecac5795e6ddfb71f077d204a2d89167341d0c4e7", "state"=>"0531c1a9a6532eb81dab380b3e42b2a64966e4766517b0d9"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 14:33:28 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 44ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:33:28 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:33:28 +0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:33:28 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (45ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:33:28 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:33:35 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=99e3f5976334e93fa24934f5b76c81f970ea97e0ee14a6d6c69134bb62e1aab1&state=b00fcdc45c9f1b6250f2ac1fd829040a7da6182268d59824" for 127.0.0.1 at 2015-08-04 14:33:36 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"99e3f5976334e93fa24934f5b76c81f970ea97e0ee14a6d6c69134bb62e1aab1", "state"=>"b00fcdc45c9f1b6250f2ac1fd829040a7da6182268d59824"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.3ms)
+
+
+Started GET "/users/auth/doorkeeper/callback?code=99e3f5976334e93fa24934f5b76c81f970ea97e0ee14a6d6c69134bb62e1aab1&state=b00fcdc45c9f1b6250f2ac1fd829040a7da6182268d59824" for 127.0.0.1 at 2015-08-04 14:36:16 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"99e3f5976334e93fa24934f5b76c81f970ea97e0ee14a6d6c69134bb62e1aab1", "state"=>"b00fcdc45c9f1b6250f2ac1fd829040a7da6182268d59824"}
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (31.0ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.6ms)
+
+
+Started GET "/users/auth/doorkeeper/callback?code=99e3f5976334e93fa24934f5b76c81f970ea97e0ee14a6d6c69134bb62e1aab1&state=b00fcdc45c9f1b6250f2ac1fd829040a7da6182268d59824" for 127.0.0.1 at 2015-08-04 14:39:50 +0700
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"99e3f5976334e93fa24934f5b76c81f970ea97e0ee14a6d6c69134bb62e1aab1", "state"=>"b00fcdc45c9f1b6250f2ac1fd829040a7da6182268d59824"}
+Completed 404 Not Found in 1ms
+
+ActionController::RoutingError (No route matches {:controller=>"home", nil=>:user}):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/auth/doorkeeper/callback?code=99e3f5976334e93fa24934f5b76c81f970ea97e0ee14a6d6c69134bb62e1aab1&state=b00fcdc45c9f1b6250f2ac1fd829040a7da6182268d59824" for 127.0.0.1 at 2015-08-04 14:40:32 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"99e3f5976334e93fa24934f5b76c81f970ea97e0ee14a6d6c69134bb62e1aab1", "state"=>"b00fcdc45c9f1b6250f2ac1fd829040a7da6182268d59824"}
+Completed 404 Not Found in 1ms
+
+ActionController::RoutingError (No route matches {:controller=>"home", nil=>:user}):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 14:41:04 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (8.9ms)
+Completed 200 OK in 55ms (Views: 55.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:41:04 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:41:04 +0700
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:41:04 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:41:04 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:41:06 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=12374659a5eb7946a221fc3868a16a34b4f24a8b1b27319cb83202ce3a6499a5&state=1fe021dd73ec72b5c18b58f90ffc770a65c41c8514abef31" for 127.0.0.1 at 2015-08-04 14:41:12 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"12374659a5eb7946a221fc3868a16a34b4f24a8b1b27319cb83202ce3a6499a5", "state"=>"1fe021dd73ec72b5c18b58f90ffc770a65c41c8514abef31"}
+Redirected to http://localhost:3001/users/sign_in
+Completed 302 Found in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-08-04 14:41:13 +0700
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/shared/_links.erb (1.3ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/sessions/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 93ms (Views: 20.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:41:13 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:41:13 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:41:13 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:41:13 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:41:22 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=f978dd018679a6b6ee3480b00f77d56973b77f684e0bf79bb3051a15226753f4&state=fd0967b0558f3c152818341e1cb74c313f4e721278caa23a" for 127.0.0.1 at 2015-08-04 14:41:22 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"f978dd018679a6b6ee3480b00f77d56973b77f684e0bf79bb3051a15226753f4", "state"=>"fd0967b0558f3c152818341e1cb74c313f4e721278caa23a"}
+Redirected to http://localhost:3001/users/sign_in
+Completed 302 Found in 3ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-08-04 14:41:22 +0700
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/shared/_links.erb (0.6ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 26ms (Views: 11.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:41:22 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:41:22 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:41:22 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:41:22 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 14:43:25 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 78ms (Views: 77.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:43:26 +0700
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:43:26 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:43:26 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:43:26 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:43:45 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=64e61ae90136c28a53dfcddaeec795fdd1bbfc2e68923191a622619d573483ba&state=2d6d5f73fb13c01998f3f8f64ab2dda18979af098df1805b" for 127.0.0.1 at 2015-08-04 14:43:45 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"64e61ae90136c28a53dfcddaeec795fdd1bbfc2e68923191a622619d573483ba", "state"=>"2d6d5f73fb13c01998f3f8f64ab2dda18979af098df1805b"}
+Redirected to http://localhost:3001/users/sign_in
+Completed 302 Found in 2ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-08-04 14:43:46 +0700
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/shared/_links.erb (1.4ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/sessions/new.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 82ms (Views: 43.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:43:46 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:43:46 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:43:46 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:43:46 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-08-04 14:43:52 +0700
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/shared/_links.erb (1.3ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 28ms (Views: 14.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:43:52 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:43:52 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:43:52 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:43:52 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 14:43:59 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:44:00 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:44:00 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:44:00 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:44:00 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2015-08-04 14:44:58 +0700
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-08-04 14:47:41 +0700
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+ActionController::RoutingError (undefined method `before_action' for SecretController:Class):
+  app/controllers/secret_controller.rb:2:in `<class:SecretController>'
+  app/controllers/secret_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-08-04 14:47:55 +0700
+  Processing by SecretController#index as HTML
+Completed 401 Unauthorized in 52ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-08-04 14:47:55 +0700
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/shared/_links.erb (0.5ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 22ms (Views: 11.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:47:55 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:47:55 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:47:55 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:47:55 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:48:00 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=d25c70426f9030d134118da4891c3d9cf838a348c712c20dd6e2a2519d50b90d&state=70a5e27e85b961bd2f8972b76b36db89c74eef3436df5289" for 127.0.0.1 at 2015-08-04 14:48:00 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"d25c70426f9030d134118da4891c3d9cf838a348c712c20dd6e2a2519d50b90d", "state"=>"70a5e27e85b961bd2f8972b76b36db89c74eef3436df5289"}
+Redirected to http://localhost:3001/users/sign_in
+Completed 302 Found in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-08-04 14:48:00 +0700
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/shared/_links.erb (0.7ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 24ms (Views: 11.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:48:00 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:48:00 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:48:00 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:48:00 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-08-04 14:48:06 +0700
+  Processing by SecretController#index as HTML
+Completed 401 Unauthorized in 20ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-08-04 14:48:06 +0700
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/shared/_links.erb (0.8ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 33ms (Views: 18.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:48:06 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:48:06 +0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:48:06 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:48:06 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-08-04 14:48:17 +0700
+  Processing by SecretController#index as HTML
+Completed 500 Internal Server Error in 85ms
+
+ActionView::MissingTemplate (Missing template secret/index with {:handlers=>[:erb, :builder, :coffee, :haml], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "/Users/bom/bananacoding/doorkeeper-devise-client/app/views"
+  * "/Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views"
+):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:49:09 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=73b59096d58d0bd0478268fe2ccffa5e7e8b52c875a37a20998012119e1f225b&state=34a394b28acc658a546f72a9b0d840d43de7bc7a4c7e81b7" for 127.0.0.1 at 2015-08-04 14:49:23 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"73b59096d58d0bd0478268fe2ccffa5e7e8b52c875a37a20998012119e1f225b", "state"=>"34a394b28acc658a546f72a9b0d840d43de7bc7a4c7e81b7"}
+Redirected to http://localhost:3001/users/sign_in
+Completed 302 Found in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-08-04 14:49:23 +0700
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/shared/_links.erb (0.9ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 56ms (Views: 14.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:49:23 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:49:23 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:49:23 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:49:23 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-08-04 14:49:30 +0700
+  Processing by SecretController#index as HTML
+Completed 401 Unauthorized in 12ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-08-04 14:49:30 +0700
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/shared/_links.erb (0.5ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views/devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 52ms (Views: 10.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:49:30 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:49:30 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:49:30 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:49:30 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 14:52:21 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (9.0ms)
+Completed 200 OK in 93ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:52:21 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:52:21 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:52:21 +0700
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:52:21 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:52:25 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=dc40482b354e4a3eee4c4f8bee838622eb78a5818adf5e1e67d554c1f20da041&state=d6a371d00ee777c9f400e64456fc4c47659d1355e6239810" for 127.0.0.1 at 2015-08-04 14:52:26 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"dc40482b354e4a3eee4c4f8bee838622eb78a5818adf5e1e67d554c1f20da041", "state"=>"d6a371d00ee777c9f400e64456fc4c47659d1355e6239810"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.9ms)
+
+
+Started GET "/users/auth/doorkeeper/callback?code=dc40482b354e4a3eee4c4f8bee838622eb78a5818adf5e1e67d554c1f20da041&state=d6a371d00ee777c9f400e64456fc4c47659d1355e6239810" for 127.0.0.1 at 2015-08-04 14:53:18 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"dc40482b354e4a3eee4c4f8bee838622eb78a5818adf5e1e67d554c1f20da041", "state"=>"d6a371d00ee777c9f400e64456fc4c47659d1355e6239810"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.7ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:53:34 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=4cb68d760284992a36cc2b552dfc03f80ff25c8b1f7fc375a36998dc0c96dbea&state=fd0e8713fab77bff568c722daeab755d87ec0e734b5913ee" for 127.0.0.1 at 2015-08-04 14:53:34 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"4cb68d760284992a36cc2b552dfc03f80ff25c8b1f7fc375a36998dc0c96dbea", "state"=>"fd0e8713fab77bff568c722daeab755d87ec0e734b5913ee"}
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:55:37 +0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 14:55:41 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (9.1ms)
+Completed 200 OK in 91ms (Views: 90.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 14:55:41 +0700
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 14:55:41 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 14:55:41 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 14:55:41 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 14:55:47 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=385b85b01b957303223badd0a3ccbb4939c1c0a28a23c4a595daba8f8fb41b0e&state=11de6809c88ff37deded620693f235137fe569a6208de603" for 127.0.0.1 at 2015-08-04 14:55:47 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"385b85b01b957303223badd0a3ccbb4939c1c0a28a23c4a595daba8f8fb41b0e", "state"=>"11de6809c88ff37deded620693f235137fe569a6208de603"}
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:07:07 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 47ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:07:07 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:07:07 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:07:07 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:07:07 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:07:15 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=625cb5f93ebc33e9dfba253685c3d910c3cc3542538077c488ae10730fa09544&state=7760359cc86d6b74fc457ca11910e782d9633b29a278d819" for 127.0.0.1 at 2015-08-04 15:07:15 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"625cb5f93ebc33e9dfba253685c3d910c3cc3542538077c488ae10730fa09544", "state"=>"7760359cc86d6b74fc457ca11910e782d9633b29a278d819"}
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:10:04 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:10:04 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:10:04 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:10:04 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:10:04 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:10:07 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=7e9909b19ce6fc67a0428cb254188975afcf5f32acbd1f02eb64b0e9594d2e60&state=e5b507b612116b1839f2df22e2f907243b62e380c2b6fc38" for 127.0.0.1 at 2015-08-04 15:10:08 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"7e9909b19ce6fc67a0428cb254188975afcf5f32acbd1f02eb64b0e9594d2e60", "state"=>"e5b507b612116b1839f2df22e2f907243b62e380c2b6fc38"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.6ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:10:20 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=eccc56548d996f5cb44ea41340140e959851f41eb1cfd010cb2fb668e74ef7d2&state=5d116db9f40df1fbb4bc6074a569fc4edcb8f4322e15a7bf" for 127.0.0.1 at 2015-08-04 15:10:20 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"eccc56548d996f5cb44ea41340140e959851f41eb1cfd010cb2fb668e74ef7d2", "state"=>"5d116db9f40df1fbb4bc6074a569fc4edcb8f4322e15a7bf"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:15:48 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:15:48 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:15:48 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:15:48 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:15:48 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:16:00 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=9146b9ed39bd8f2414cb0d34f008ce7db962eb359e52424e721c1960432a5f58&state=66398f5a7d8fe23d08ea2684d2e288f23a147b4b14e2667d" for 127.0.0.1 at 2015-08-04 15:16:00 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"9146b9ed39bd8f2414cb0d34f008ce7db962eb359e52424e721c1960432a5f58", "state"=>"66398f5a7d8fe23d08ea2684d2e288f23a147b4b14e2667d"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.5ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:18:49 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=9384fb9581a10c8f819871d8812a705a21414b1149bda26ca5d1e3e16ebcbb99&state=0d13040699b215c5f8bbf704d86d0f374252b425e83a79ce" for 127.0.0.1 at 2015-08-04 15:18:49 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"9384fb9581a10c8f819871d8812a705a21414b1149bda26ca5d1e3e16ebcbb99", "state"=>"0d13040699b215c5f8bbf704d86d0f374252b425e83a79ce"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.8ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:19:38 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=ce71093a1b1bb412447eeb1fb9786a7e50537dca274f12e772b58180509da724&state=e950db91aea91c6f70e2b46dedee0cd707805c1034d583b4" for 127.0.0.1 at 2015-08-04 15:19:38 +0700
+  Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"ce71093a1b1bb412447eeb1fb9786a7e50537dca274f12e772b58180509da724", "state"=>"e950db91aea91c6f70e2b46dedee0cd707805c1034d583b4"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `gsub' for nil:NilClass):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (33.6ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (37.5ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:20:47 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=2d1370f92d3fe5ebd36d5606fe2351cdaf72ba3b23699eebdae83dd97d79daf4&state=c8235a7acdb35d69a079950039c698a038c923b3d1d7cd8d" for 127.0.0.1 at 2015-08-04 15:20:47 +0700
+  Processing by Users::OmniauthCallbacksController#doorkeeper as HTML
+  Parameters: {"code"=>"2d1370f92d3fe5ebd36d5606fe2351cdaf72ba3b23699eebdae83dd97d79daf4", "state"=>"c8235a7acdb35d69a079950039c698a038c923b3d1d7cd8d"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."doorkeeper_uid" = 1 LIMIT 1[0m
+  [1m[35mSQL (27.6ms)[0m  INSERT INTO "users" ("created_at", "doorkeeper_access_token", "doorkeeper_uid", "email", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Tue, 04 Aug 2015 08:20:47 UTC +00:00], ["doorkeeper_access_token", "19c5e755200ec7693ceef3325af97f7d4f83d386e93de16492220c3badac59f5"], ["doorkeeper_uid", 1], ["email", "kraiwuthi@hotmail.com"], ["updated_at", Tue, 04 Aug 2015 08:20:47 UTC +00:00]]
+Redirected to http://localhost:3001/secret
+Completed 302 Found in 148ms
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-08-04 15:20:48 +0700
+  Processing by SecretController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 63ms
+
+ActionView::MissingTemplate (Missing template secret/index with {:handlers=>[:erb, :builder, :coffee, :haml], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "/Users/bom/bananacoding/doorkeeper-devise-client/app/views"
+  * "/Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views"
+):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:20:57 +0700
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered home/index.html.haml within layouts/application (14.7ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:20:57 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:20:57 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:20:57 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:20:57 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:22:39 +0700
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.haml within layouts/application (13.9ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:22:39 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:22:39 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:22:39 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:22:39 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:23:11 +0700
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered home/index.html.haml within layouts/application (15.9ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:23:12 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:23:12 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:23:12 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:23:12 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2015-08-04 15:23:16 +0700
+  Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 7ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:23:17 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:23:17 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:23:17 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:23:17 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:23:17 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:23:21 +0700
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-08-04 15:23:56 +0700
+  Processing by SecretController#index as HTML
+Completed 401 Unauthorized in 57ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:23:56 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:23:56 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:23:56 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:23:56 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:23:56 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:23:58 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=1f0931323b74105f7fba40aef99408238e79ca142663ce323618e80cd3e7812e&state=177ec615c50a24a3c4875fb245275777056f3c62f04beb7f" for 127.0.0.1 at 2015-08-04 15:24:05 +0700
+  Processing by Users::OmniauthCallbacksController#doorkeeper as HTML
+  Parameters: {"code"=>"1f0931323b74105f7fba40aef99408238e79ca142663ce323618e80cd3e7812e", "state"=>"177ec615c50a24a3c4875fb245275777056f3c62f04beb7f"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."doorkeeper_uid" = 1 LIMIT 1
+Redirected to http://localhost:3001/secret
+Completed 302 Found in 16ms
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-08-04 15:24:05 +0700
+  Processing by SecretController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 29ms
+
+ActionView::MissingTemplate (Missing template secret/index with {:handlers=>[:erb, :builder, :coffee, :haml], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "/Users/bom/bananacoding/doorkeeper-devise-client/app/views"
+  * "/Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views"
+):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-08-04 15:24:08 +0700
+  Processing by SecretController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Completed 500 Internal Server Error in 62ms
+
+ActionView::MissingTemplate (Missing template secret/index with {:handlers=>[:erb, :builder, :coffee, :haml], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "/Users/bom/bananacoding/doorkeeper-devise-client/app/views"
+  * "/Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/devise-2.2.8/app/views"
+):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-08-04 15:24:43 +0700
+  Processing by SecretController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered secret/index.html (0.3ms)
+Completed 200 OK in 27ms (Views: 6.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:24:48 +0700
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered home/index.html.haml within layouts/application (44.7ms)
+Completed 200 OK in 51ms (Views: 50.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:24:48 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:24:48 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:24:48 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:24:48 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2015-08-04 15:24:51 +0700
+  Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 10ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:24:51 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:24:51 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:24:51 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:24:51 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:24:51 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:25:56 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:25:56 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:25:56 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:25:56 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:25:56 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:28:06 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=040337f7f74567669f9b9dac443c5bdc6bb9e9517ad9297c0140d65ed96d62d0&state=7caee6ff4df563b5f90e900443940063719718c77360ca6c" for 127.0.0.1 at 2015-08-04 15:28:14 +0700
+  Processing by Users::OmniauthCallbacksController#doorkeeper as HTML
+  Parameters: {"code"=>"040337f7f74567669f9b9dac443c5bdc6bb9e9517ad9297c0140d65ed96d62d0", "state"=>"7caee6ff4df563b5f90e900443940063719718c77360ca6c"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."doorkeeper_uid" = 1 LIMIT 1
+Redirected to http://localhost:3001/
+Completed 302 Found in 17ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:28:14 +0700
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.haml within layouts/application (42.3ms)
+Completed 200 OK in 49ms (Views: 19.5ms | ActiveRecord: 29.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:28:14 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:28:14 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:28:14 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:28:14 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2015-08-04 15:33:25 +0700
+  Processing by Users::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3001/
+Completed 302 Found in 18ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:33:25 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:33:25 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:33:25 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:33:25 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:33:25 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:33:52 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=b0d682d32c0685bbe2fac4a82e2e16a4a58c16a6942cb240b1dbe29a145fb312&state=7f2dbe524b473cb9c42355527ca4783cbe87573141ba411a" for 127.0.0.1 at 2015-08-04 15:33:52 +0700
+  Processing by Users::OmniauthCallbacksController#doorkeeper as HTML
+  Parameters: {"code"=>"b0d682d32c0685bbe2fac4a82e2e16a4a58c16a6942cb240b1dbe29a145fb312", "state"=>"7f2dbe524b473cb9c42355527ca4783cbe87573141ba411a"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."doorkeeper_uid" = 1 LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 13ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:33:52 +0700
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered home/index.html.haml within layouts/application (43.4ms)
+Completed 200 OK in 51ms (Views: 50.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:33:53 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:33:53 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:33:53 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:33:53 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2015-08-04 15:34:01 +0700
+  Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 10ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:34:01 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 40ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:34:01 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:01 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:01 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:01 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:34:03 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:34:03 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:03 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:03 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:03 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:34:10 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=194e55e922cb793cdc02cd8a006e70d66038b0d575b17682283628033a76a4d4&state=22138a396406aa514ad6c30e3d99c4ec91b67897c77bb730" for 127.0.0.1 at 2015-08-04 15:34:10 +0700
+  Processing by Users::OmniauthCallbacksController#doorkeeper as HTML
+  Parameters: {"code"=>"194e55e922cb793cdc02cd8a006e70d66038b0d575b17682283628033a76a4d4", "state"=>"22138a396406aa514ad6c30e3d99c4ec91b67897c77bb730"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."doorkeeper_uid" = 1 LIMIT 1
+Redirected to http://localhost:3001/
+Completed 302 Found in 16ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:34:10 +0700
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.haml within layouts/application (12.7ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:34:10 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:10 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:10 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:10 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2015-08-04 15:34:18 +0700
+  Processing by Users::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Redirected to http://localhost:3001/
+Completed 302 Found in 7ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:34:19 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:34:19 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:19 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:19 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:19 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:34:47 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 80ms (Views: 79.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:34:48 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:48 +0700
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:48 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:34:48 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:34:50 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=e8cbe6f535fcdc5a59badcb3c14222ed4b1a287316a6450b827f4b023d49c386&state=85c56f4ecd30318792bf93f9fb8ee5e2e2720d0351f24f0a" for 127.0.0.1 at 2015-08-04 15:34:51 +0700
+
+Faraday::ConnectionFailed (Connection refused - connect(2)):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.6ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:35:29 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=db9e526a21305b99d057ee7bc530a84a4c53d45de48c4532681d771c27c2b774&state=bbf5cb1ef49ead983c127e61744f1bbc57916227e705e5a4" for 127.0.0.1 at 2015-08-04 15:35:30 +0700
+  Processing by Users::OmniauthCallbacksController#doorkeeper as HTML
+  Parameters: {"code"=>"db9e526a21305b99d057ee7bc530a84a4c53d45de48c4532681d771c27c2b774", "state"=>"bbf5cb1ef49ead983c127e61744f1bbc57916227e705e5a4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."doorkeeper_uid" = 1 LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 77ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:35:30 +0700
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered home/index.html.haml within layouts/application (46.6ms)
+Completed 200 OK in 95ms (Views: 93.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:35:30 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:35:30 +0700
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:35:30 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:35:30 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2015-08-04 15:35:38 +0700
+  Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 8ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:35:38 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:35:38 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:35:38 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:35:38 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:35:38 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:36:10 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:36:10 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:36:10 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:36:10 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:36:10 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:36:36 +0700
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-08-04 15:37:05 +0700
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-08-04 15:37:24 +0700
+  Processing by SecretController#index as HTML
+Completed 401 Unauthorized in 10ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-08-04 15:37:24 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-08-04 15:37:24 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-08-04 15:37:24 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-08-04 15:37:24 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-08-04 15:37:24 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper/callback?code=b02cd42065e9e470334fbeeecebc87d56205380a67bbdf78904a8332cf9fb57f&state=85f68c4d97a8f1f68959cfc89418c15dae579d25befe1c4b" for 127.0.0.1 at 2015-08-04 15:37:38 +0700
+  Processing by Users::OmniauthCallbacksController#doorkeeper as HTML
+  Parameters: {"code"=>"b02cd42065e9e470334fbeeecebc87d56205380a67bbdf78904a8332cf9fb57f", "state"=>"85f68c4d97a8f1f68959cfc89418c15dae579d25befe1c4b"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."doorkeeper_uid" = 1 LIMIT 1
+Redirected to http://localhost:3001/secret
+Completed 302 Found in 47ms
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-08-04 15:37:38 +0700
+  Processing by SecretController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered secret/index.html (0.3ms)
+Completed 200 OK in 31ms (Views: 4.7ms | ActiveRecord: 0.8ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:01:41 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (19.5ms)
+Completed 200 OK in 149ms (Views: 148.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:01:43 +0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:01:43 +0700
+Served asset /jquery_ujs.js - 200 OK (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:01:43 +0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:01:43 +0700
+Served asset /jquery.js - 200 OK (8ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:02:22 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (43.6ms)
+Completed 200 OK in 105ms (Views: 105.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:02:22 +0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:02:22 +0700
+Served asset /jquery.js - 200 OK (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:02:23 +0700
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:02:23 +0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:02:42 +0700
+
+
+Started GET "/oauth/authorize?client_id=f57938dc1c47c66e2daed9083eee1e0b941312ed0c71a678abe774aab99b6a34&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fusers%2Fauth%2Fdoorkeeper%2Fcallback&response_type=code&state=63b1eeb338321a1acb8cf4c4f4e72c105f8249569eb4bc52" for 127.0.0.1 at 2015-09-02 11:02:42 +0700
+
+ActionController::RoutingError (No route matches [GET] "/oauth/authorize"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:05:48 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (12.5ms)
+Completed 200 OK in 104ms (Views: 103.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:05:48 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:05:48 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:05:48 +0700
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:05:48 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:05:52 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:05:52 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:05:52 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:05:52 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:05:52 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:05:55 +0700
+
+
+Started GET "/oauth/authorize?client_id=f57938dc1c47c66e2daed9083eee1e0b941312ed0c71a678abe774aab99b6a34&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fusers%2Fauth%2Fdoorkeeper%2Fcallback&response_type=code&state=3876940a7a0f2aa39bbc39be9408c5809817f926fd756368" for 127.0.0.1 at 2015-09-02 11:05:55 +0700
+
+ActionController::RoutingError (No route matches [GET] "/oauth/authorize"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:06:09 +0700
+
+
+Started GET "/oauth/authorize?client_id=f57938dc1c47c66e2daed9083eee1e0b941312ed0c71a678abe774aab99b6a34&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fusers%2Fauth%2Fdoorkeeper%2Fcallback&response_type=code&state=240865c1b106c2b66064f997de9ec57c49f18728015be83f" for 127.0.0.1 at 2015-09-02 11:06:09 +0700
+
+ActionController::RoutingError (No route matches [GET] "/oauth/authorize"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:08:04 +0700
+
+
+Started GET "/oauth/authorize?client_id=f57938dc1c47c66e2daed9083eee1e0b941312ed0c71a678abe774aab99b6a34&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fusers%2Fauth%2Fdoorkeeper%2Fcallback&response_type=code&state=14087ae209f104ee01ed60d03d61bae04b8e9e5ce5975278" for 127.0.0.1 at 2015-09-02 11:08:04 +0700
+
+ActionController::RoutingError (No route matches [GET] "/oauth/authorize"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:08:09 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:08:09 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:08:09 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:08:09 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:08:09 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:08:11 +0700
+
+
+Started GET "/oauth/authorize?client_id=f57938dc1c47c66e2daed9083eee1e0b941312ed0c71a678abe774aab99b6a34&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fusers%2Fauth%2Fdoorkeeper%2Fcallback&response_type=code&state=ba2dc7137dc35ccf6989258e80e372e29e65bcc59c038af4" for 127.0.0.1 at 2015-09-02 11:08:11 +0700
+
+ActionController::RoutingError (No route matches [GET] "/oauth/authorize"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:08:24 +0700
+
+
+Started GET "/oauth/authorize?client_id=f57938dc1c47c66e2daed9083eee1e0b941312ed0c71a678abe774aab99b6a34&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fusers%2Fauth%2Fdoorkeeper%2Fcallback&response_type=code&state=af89348737f534413fa121f67ec2ddbc4189d07f62bac839" for 127.0.0.1 at 2015-09-02 11:08:24 +0700
+
+ActionController::RoutingError (No route matches [GET] "/oauth/authorize"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:09:51 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 43ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:09:51 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:09:51 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:09:51 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:09:51 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:09:55 +0700
+
+
+Started GET "/oauth/authorize?client_id=f57938dc1c47c66e2daed9083eee1e0b941312ed0c71a678abe774aab99b6a34&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fusers%2Fauth%2Fdoorkeeper%2Fcallback&response_type=code&state=0209974261f00461e274fe6ab089f280c52ef60d5fc3e20a" for 127.0.0.1 at 2015-09-02 11:09:55 +0700
+
+ActionController::RoutingError (No route matches [GET] "/oauth/authorize"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:10:23 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:10:23 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:10:23 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:10:23 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:10:23 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:10:32 +0700
+
+
+Started GET "/oauth/authorize?client_id=f57938dc1c47c66e2daed9083eee1e0b941312ed0c71a678abe774aab99b6a34&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fusers%2Fauth%2Fdoorkeeper%2Fcallback&response_type=code&state=20c013583c6d4eacfc8a9f34208910a2d8fb38331bf0972e" for 127.0.0.1 at 2015-09-02 11:10:32 +0700
+
+ActionController::RoutingError (No route matches [GET] "/oauth/authorize"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:20:40 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (11.4ms)
+Completed 200 OK in 93ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:20:40 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:20:40 +0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:20:40 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:20:40 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (42ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:20:44 +0700
+
+
+Started GET "/oauth/authorize?client_id=f57938dc1c47c66e2daed9083eee1e0b941312ed0c71a678abe774aab99b6a34&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fusers%2Fauth%2Fdoorkeeper%2Fcallback&response_type=code&state=89e5ff309a73b557482bcd6c6f0c16cb3622e55b0420ad0f" for 127.0.0.1 at 2015-09-02 11:20:45 +0700
+
+ActionController::RoutingError (No route matches [GET] "/oauth/authorize"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:21:24 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (9.0ms)
+Completed 200 OK in 106ms (Views: 105.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:21:24 +0700
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:21:24 +0700
+Served asset /jquery.js - 200 OK (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:21:24 +0700
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:21:24 +0700
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:21:32 +0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:21:57 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:21:57 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:21:57 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:21:57 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:21:57 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:22:01 +0700
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:22:20 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:22:20 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:22:20 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:22:20 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:22:20 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-09-02 11:22:29 +0700
+  Processing by SecretController#index as HTML
+Completed 401 Unauthorized in 25ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:22:30 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:22:30 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:22:30 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:22:30 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:22:30 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-09-02 11:26:46 +0700
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+
+Rendered /Users/bom/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.9ms)
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-09-02 11:28:19 +0700
+  Processing by SecretController#index as HTML
+Completed 401 Unauthorized in 143ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:28:19 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:28:19 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:28:19 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:28:19 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:28:19 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:28:21 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:28:21 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:28:21 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:28:21 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:28:21 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:28:23 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:28:23 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:28:23 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:28:23 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:28:23 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:28:25 +0700
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 11:43:32 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (13.6ms)
+Completed 200 OK in 161ms (Views: 159.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 11:43:33 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 11:43:33 +0700
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 11:43:33 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 11:43:33 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 11:43:35 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=3a4d711b86af00e048c27c60f88320f0c1e4dd89d54f482779b48c40cd596550&state=48a29b8021c872005f7b1d85cdd4fb9cfc46a4e65f7409dd" for 127.0.0.1 at 2015-09-02 11:43:52 +0700
+  Processing by Users::OmniauthCallbacksController#doorkeeper as HTML
+  Parameters: {"code"=>"3a4d711b86af00e048c27c60f88320f0c1e4dd89d54f482779b48c40cd596550", "state"=>"48a29b8021c872005f7b1d85cdd4fb9cfc46a4e65f7409dd"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."doorkeeper_uid" = 3 LIMIT 1[0m
+  [1m[35mSQL (21.3ms)[0m  INSERT INTO "users" ("created_at", "doorkeeper_access_token", "doorkeeper_uid", "email", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Wed, 02 Sep 2015 04:43:52 UTC +00:00], ["doorkeeper_access_token", "0cb7d3102924b5880205f03dcf4b00ee73b6d7592aea051af2e602f6c7543103"], ["doorkeeper_uid", 3], ["email", "kraiwuthi.a@gmail.com"], ["updated_at", Wed, 02 Sep 2015 04:43:52 UTC +00:00]]
+Redirected to http://localhost:3001/secret
+Completed 302 Found in 130ms
+
+
+Started GET "/secret" for 127.0.0.1 at 2015-09-02 11:43:52 +0700
+  Processing by SecretController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered secret/index.html (0.4ms)
+Completed 200 OK in 36ms (Views: 7.4ms | ActiveRecord: 1.0ms)
+DEPRECATION WARNING: Passing a block to devise_for is deprecated. Please remove the block from devise_for (only the block, the call to devise_for must still exist) and call devise_scope :user do ... end with the block instead. (called from block in <top (required)> at /Users/bom/bananacoding/doorkeeper-devise-client/config/routes.rb:53)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 13:13:25 +0700
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered home/index.html.haml within layouts/application (119.2ms)
+Completed 200 OK in 210ms (Views: 207.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 13:13:26 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 13:13:26 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 13:13:26 +0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 13:13:26 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2015-09-02 13:13:44 +0700
+  Processing by Users::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Redirected to http://localhost:3001/
+Completed 302 Found in 19ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 13:13:44 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 13:13:44 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 13:13:44 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 13:13:44 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 13:13:44 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 13:13:49 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=f447142f436012bae857769d880af35737e348d971f65322a1d4eede979b132c&state=39ce6554c56e64ba10f55a551ca66373d1fc6eea6cb94e92" for 127.0.0.1 at 2015-09-02 13:13:49 +0700
+  Processing by Users::OmniauthCallbacksController#doorkeeper as HTML
+  Parameters: {"code"=>"f447142f436012bae857769d880af35737e348d971f65322a1d4eede979b132c", "state"=>"39ce6554c56e64ba10f55a551ca66373d1fc6eea6cb94e92"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."doorkeeper_uid" = 3 LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 15ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 13:13:49 +0700
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered home/index.html.haml within layouts/application (15.8ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 13:13:49 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 13:13:49 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 13:13:49 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 13:13:50 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2015-09-02 13:13:58 +0700
+  Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 12ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 13:13:58 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 13:13:58 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 13:13:58 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 13:13:58 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 13:13:58 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 13:13:59 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=af757834e11ae2f6215619161ffd8a9841c5de5863539b316bb4f547e787d128&state=88b3986004bd8431c58f11ea754e1fb06d71d03106e2c7ef" for 127.0.0.1 at 2015-09-02 13:14:14 +0700
+  Processing by Users::OmniauthCallbacksController#doorkeeper as HTML
+  Parameters: {"code"=>"af757834e11ae2f6215619161ffd8a9841c5de5863539b316bb4f547e787d128", "state"=>"88b3986004bd8431c58f11ea754e1fb06d71d03106e2c7ef"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."doorkeeper_uid" = 3 LIMIT 1
+Redirected to http://localhost:3001/
+Completed 302 Found in 16ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 13:14:14 +0700
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered home/index.html.haml within layouts/application (13.7ms)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 13:14:14 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 13:14:14 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 13:14:14 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 13:14:14 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 13:32:59 +0700
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered home/index.html.haml within layouts/application (34.7ms)
+Completed 200 OK in 67ms (Views: 65.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 13:32:59 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 13:32:59 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 13:32:59 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 13:32:59 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2015-09-02 13:38:46 +0700
+  Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 11ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 13:38:46 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 13:38:46 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 13:38:46 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 13:38:46 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 13:38:46 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 13:38:56 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=bb159bd3591d4193d7def88665d803dd50b00377c3a23bb8a4b8bdd3c8aa39e5&state=d770d74e13eaecbb2884403f9e654a483940cea613b3c04b" for 127.0.0.1 at 2015-09-02 13:38:57 +0700
+  Processing by Users::OmniauthCallbacksController#doorkeeper as HTML
+  Parameters: {"code"=>"bb159bd3591d4193d7def88665d803dd50b00377c3a23bb8a4b8bdd3c8aa39e5", "state"=>"d770d74e13eaecbb2884403f9e654a483940cea613b3c04b"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."doorkeeper_uid" = 1 LIMIT 1
+  [1m[36m (6.1ms)[0m  [1mUPDATE "users" SET "doorkeeper_access_token" = '476eea911f8911dc71811fafabc0ea2c3595542ebd0c5164c35c06fc603592de', "updated_at" = '2015-09-02 06:38:57.288031' WHERE "users"."id" = 1[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 63ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 13:38:57 +0700
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered home/index.html.haml within layouts/application (11.8ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 13:38:57 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 13:38:57 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 13:38:57 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 13:38:57 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at 2015-09-02 13:38:59 +0700
+  Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 12ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 13:38:59 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 13:38:59 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 13:38:59 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 13:38:59 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 13:38:59 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 13:39:10 +0700
+  Processing by HomeController#index as HTML
+Rendered home/index.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 13:39:10 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 13:39:10 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 13:39:10 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 13:39:10 +0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/auth/doorkeeper" for 127.0.0.1 at 2015-09-02 13:39:11 +0700
+
+
+Started GET "/users/auth/doorkeeper/callback?code=56608750c5e4681d246f51116ba012198bd91814be5e55b053656bf49fff6352&state=bf6ed7add0e1b72ffebf4299cc12c2b270784661dbb76b2e" for 127.0.0.1 at 2015-09-02 13:39:37 +0700
+  Processing by Users::OmniauthCallbacksController#doorkeeper as HTML
+  Parameters: {"code"=>"56608750c5e4681d246f51116ba012198bd91814be5e55b053656bf49fff6352", "state"=>"bf6ed7add0e1b72ffebf4299cc12c2b270784661dbb76b2e"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."doorkeeper_uid" = 1 LIMIT 1
+Redirected to http://localhost:3001/
+Completed 302 Found in 14ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-02 13:39:37 +0700
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.haml within layouts/application (13.7ms)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-02 13:39:37 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-02 13:39:37 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-02 13:39:37 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-02 13:39:37 +0700
+Served asset /application.js - 304 Not Modified (0ms)
